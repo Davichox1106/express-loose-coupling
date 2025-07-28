@@ -1,0 +1,12 @@
+### Obtener mascotas disponibles en la tienda
+GET http://localhost:3050/api/store/pets
+
+###
+
+### Checkout - Comprar mascotas (reemplazar los IDs con IDs reales de mascotas)
+POST http://localhost:3050/api/store/checkout
+Content-Type: application/json
+
+{
+  "petIds": ["ID_MASCOTA_1", "ID_MASCOTA_2"]
+}

@@ -3,8 +3,9 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-const petRoutes = require('./routes/pets');
-const storeRoutes = require('./routes/store');
+const Container = require('./infrastructure/config/Container');
+const createPetRoutes = require('./infrastructure/routes/pets');
+const createStoreRoutes = require('./infrastructure/routes/store');
 
 dotenv.config();
 
@@ -13,8 +14,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/pets', petRoutes);
-app.use('/api/store', storeRoutes);
+const container = new Container();
+
+app.use('/api/pets', createPetRoutes(container));
+app.use('/api/store', createStoreRoutes(container));
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,0 +1,51 @@
+### Crear una nueva mascota
+POST http://localhost:3050/api/pets
+Content-Type: application/json
+
+{
+  "name": "Buddy",
+  "species": "Dog",
+  "age": 3,
+  "price": 500
+}
+
+###
+
+### Crear otra mascota
+POST http://localhost:3050/api/pets
+Content-Type: application/json
+
+{
+  "name": "Whiskers",
+  "species": "Cat",
+  "age": 2,
+  "price": 300
+}
+
+###
+
+### Obtener todas las mascotas
+GET http://localhost:3050/api/pets
+
+###
+
+### Obtener mascota por ID (reemplazar {id} con un ID real)
+GET http://localhost:3050/api/pets/{id}
+
+###
+
+### Actualizar mascota por ID (reemplazar {id} con un ID real)
+PUT http://localhost:3050/api/pets/{id}
+Content-Type: application/json
+
+{
+  "name": "Buddy Updated",
+  "species": "Dog",
+  "age": 4,
+  "price": 550
+}
+
+###
+
+### Eliminar mascota por ID (reemplazar {id} con un ID real)
+DELETE http://localhost:3050/api/pets/{id}
